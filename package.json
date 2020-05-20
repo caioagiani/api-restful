@@ -1,0 +1,40 @@
+{
+  "name": "api-sky",
+  "version": "0.0.1",
+  "description": "API RESTful SKY",
+  "main": "src/server.js",
+  "license": "MIT",
+  "keywords": [
+    "api",
+    "restful",
+    "sky"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caioagiani"
+  },
+  "author": {
+    "name": "Caio Agiani",
+    "email": "caio.agiani14@gmail.com",
+    "url": "https://www.linkedin.com/in/caioagiani"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev:start": "nodemon -r dotenv/config src/server.js --ignore tests",
+    "test": "jest --setupFiles dotenv/config --detectOpenHandles --forceExit",
+    "test:clear": "jest --clearCache"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.15"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  }
+}
