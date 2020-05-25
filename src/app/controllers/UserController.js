@@ -1,5 +1,5 @@
-const { createToken } = require('./TokenController');
 const bcryptjs = require('bcryptjs');
+const { createToken } = require('./TokenController');
 
 const User = require('../models/User');
 
@@ -9,7 +9,7 @@ module.exports = {
     const { user_id } = req.params;
 
     if (user_id != tokenId) {
-      return res.status(401).json({ mensagem: 'Não autorizado' });
+      return res.status(401).json({ mensagem: 'Não autorizado.' });
     }
 
     const user = await User.findById({ _id: user_id });
@@ -26,7 +26,7 @@ module.exports = {
     const checkEmail = await User.findOne({ email });
 
     if (checkEmail) {
-      return res.status(200).json({ mensagem: 'E-mail já existente.' });
+      return res.status(400).json({ mensagem: 'E-mail já existente.' });
     }
 
     const user = await User.create(req.body);
@@ -34,7 +34,7 @@ module.exports = {
     user.password = undefined;
     user.__v = undefined;
 
-    return res.json(user);
+    return res.status(200).json(user);
   },
 
   async show(req, res) {
@@ -44,7 +44,7 @@ module.exports = {
 
     if (!user) {
       return res
-        .status(200)
+        .status(400)
         .json({ mensagem: 'Usuário e/ou senha inválidos.' });
     }
 
@@ -52,14 +52,14 @@ module.exports = {
 
     if (!checkPass) {
       return res
-        .status(200)
+        .status(400)
         .json({ mensagem: 'Usuário e/ou senha inválidos.' });
     }
 
     const token = createToken({
       id: user.id,
       name: user.name,
-      email,
+      email
     });
 
     await User.findOneAndUpdate(
@@ -71,6 +71,6 @@ module.exports = {
     user.__v = undefined;
     user.token = token;
 
-    return res.json(user);
-  },
+    return res.status(200).json(user);
+  }
 };

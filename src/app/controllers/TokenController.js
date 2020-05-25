@@ -7,7 +7,7 @@ const { sign } = require('jsonwebtoken');
  * @returns JWT
  */
 const createToken = (params = {}) => {
-  let expiresSet = new Date(Date.now());
+  const expiresSet = new Date(Date.now());
   expiresSet.setMinutes(expiresSet.getMinutes() + 30);
 
   return sign(

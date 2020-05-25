@@ -5,7 +5,7 @@ describe('Authentication', () => {
   it('should create session authentication', async (done) => {
     const response = await request(app).post('/login').send({
       email: 'caio.agiani14@gmail.com',
-      password: '123',
+      password: '123'
     });
 
     expect(response.status).toBe(200);
@@ -24,9 +24,9 @@ describe('Login', () => {
         telefones: [
           {
             numero: '999865802',
-            ddd: '11',
-          },
-        ],
+            ddd: '11'
+          }
+        ]
       });
 
     expect(response.status).toBe(200);

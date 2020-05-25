@@ -2,3 +2,6 @@ node_modules
 
 .env
 .env.test
+
+yarn.lock
+package.json.lock

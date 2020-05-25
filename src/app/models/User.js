@@ -5,36 +5,36 @@ const UserSchema = new Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: true
     },
     email: {
       type: String,
       unique: true,
       required: true,
-      lowercase: true,
+      lowercase: true
     },
     telefones: [
       {
         numero: String,
-        ddd: String,
-      },
+        ddd: String
+      }
     ],
     password: {
       type: String,
       required: true,
-      select: false,
+      select: false
     },
     lastLoginAt: {
       type: Date,
-      default: Date.now(),
+      default: Date.now()
     },
     token: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 );
 

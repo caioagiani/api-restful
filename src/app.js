@@ -16,7 +16,7 @@ server.use(routes);
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
-    useFindAndModify: false,
+    useFindAndModify: false
   });
 })();
 
