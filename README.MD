@@ -88,7 +88,7 @@ Rotas mapeada do arquivo exportado Insominia: `Insomnia.json`
 
 ```java
 SECRET_JWT=XXX
-MONGO_CONN=mongodb+srv://<user>:<pass>@cluster0-okpdn.gcp.mongodb.net/test?retryWrites=true&w=majority
+MONGO_CONN=mongodb+srv://<user>:<pass>@cluster0-okpdn.gcp.mongodb.net/api
 ```
 
 - Instalar dependências: `yarn install` ou `npm install`
