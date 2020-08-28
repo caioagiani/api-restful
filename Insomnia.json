@@ -1,8 +1,8 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2020-05-20T04:40:38.114Z",
-  "__export_source": "insomnia.desktop.app:v7.1.1",
+  "__export_date": "2020-08-28T17:43:23.280Z",
+  "__export_source": "insomnia.desktop.app:v2020.3.3",
   "resources": [
     {
       "_id": "req_09ffd1fdffd64ed997c42b85ab535c85",
@@ -23,7 +23,7 @@
       "isPrivate": false,
       "metaSortKey": -1589904353138,
       "method": "POST",
-      "modified": 1589949352307,
+      "modified": 1598636544852,
       "name": "Criar usuário",
       "parameters": [],
       "parentId": "fld_c1449faa3ed84f1ea8ee1ce0d7177d31",
@@ -33,7 +33,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ baseUrl  }}/user/create",
+      "url": "{{ deployurl }}/user/create",
       "_type": "request"
     },
     {
@@ -55,6 +55,7 @@
       "modified": 1589904343262,
       "name": "Backend - SKY",
       "parentId": null,
+      "scope": null,
       "_type": "workspace"
     },
     {
@@ -76,7 +77,7 @@
       "isPrivate": false,
       "metaSortKey": -1589532989403.5,
       "method": "POST",
-      "modified": 1589949374427,
+      "modified": 1598636523904,
       "name": "Login",
       "parameters": [],
       "parentId": "fld_c1449faa3ed84f1ea8ee1ce0d7177d31",
@@ -86,7 +87,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ baseUrl  }}/login",
+      "url": "{{ deployurl }}/login",
       "_type": "request"
     },
     {
@@ -100,13 +101,13 @@
           "description": "",
           "id": "pair_61ed25528ec2470c9bf61b390f4e341a",
           "name": "authentication",
-          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYzRiM2E5OTViOTA4NTAxOGFlYzYwNSIsIm5hbWUiOiJDYWlvIEFnaWFuaSIsImVtYWlsIjoiY2Fpby5hZ2lhbmkxNEBnbWFpbC5jb20iLCJleHBpcmVzSW4iOjE1ODk5NTExNzUzODAsImlhdCI6MTU4OTk0OTM3NX0.o82fQk7aJewHA9Tp_N7340YF17np0NIMBtSkvlvWnL8"
+          "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYzRiM2E5OTViOTA4NTAxOGFlYzYwNSIsIm5hbWUiOiJDYWlvIEFnaWFuaSIsImVtYWlsIjoiY2Fpby5hZ2lhbmkxNEBnbWFpbC5jb20iLCJleHBpcmVzSW4iOjE1OTg2MzgzMjUzMDMsImlhdCI6MTU5ODYzNjUyNX0.2Rm8h6tjoe15bMwl9a98BMnvspBl2wWeGrowtMOvgWY"
         }
       ],
       "isPrivate": false,
       "metaSortKey": -1589532989353.5,
       "method": "GET",
-      "modified": 1589949392221,
+      "modified": 1598636534153,
       "name": "Listar usuário",
       "parameters": [],
       "parentId": "fld_c1449faa3ed84f1ea8ee1ce0d7177d31",
@@ -116,18 +117,21 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ baseUrl  }}/user/5ec4b3a995b9085018aec605",
+      "url": "{{ deployurl }}/user/5ec4b3a995b9085018aec605",
       "_type": "request"
     },
     {
       "_id": "env_32c7cae8c8cfb9f290798d048c9bef83b9426071",
       "color": null,
       "created": 1589904343498,
-      "data": { "baseUrl": "localhost:3333" },
-      "dataPropertyOrder": { "&": ["baseUrl"] },
+      "data": {
+        "baseUrl": "localhost:3333",
+        "deployurl": "https://apirestful-sky.herokuapp.com"
+      },
+      "dataPropertyOrder": { "&": ["baseUrl", "deployurl"] },
       "isPrivate": false,
       "metaSortKey": 1589904343498,
-      "modified": 1589904397803,
+      "modified": 1598636271282,
       "name": "Base Environment",
       "parentId": "wrk_00cebd9c46be4b4e8cb258c5c376d38a",
       "_type": "environment"
@@ -140,6 +144,16 @@
       "name": "Default Jar",
       "parentId": "wrk_00cebd9c46be4b4e8cb258c5c376d38a",
       "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_ace49270e1e440a7af78bef1a0c58756",
+      "contentType": "yaml",
+      "contents": "",
+      "created": 1598636231927,
+      "fileName": "Backend - SKY",
+      "modified": 1598636231927,
+      "parentId": "wrk_00cebd9c46be4b4e8cb258c5c376d38a",
+      "_type": "api_spec"
     }
   ]
 }
