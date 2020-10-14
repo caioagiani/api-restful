@@ -5,9 +5,11 @@ const {
   AuthMiddleware
 } = require('./app/controllers');
 
+const { SingIn, SingUp } = require('./app/middlewares/Check');
+
 routes
-  .post('/login', UserController.show)
-  .post('/user/create', UserController.store)
+  .post('/login', SingIn, UserController.show)
+  .post('/user/create', SingUp, UserController.store)
   .get('/user/:user_id', AuthMiddleware, UserController.index);
 
 module.exports = routes;

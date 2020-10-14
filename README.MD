@@ -133,25 +133,24 @@ Observação importante: rota `/user/:user_id` é necessário passsar no **heade
 
 ## Test
 
-```java
-caioh@developer MINGW64 ~/OneDrive/Documentos/Node/api-sky
-$ yarn test
-yarn run v1.22.0
+```javascript
+caio-agiani in api-restful on  master [!] took 2s ❯ yarn test
+yarn run v1.22.5
 $ jest --setupFiles dotenv/config --detectOpenHandles --forceExit
- PASS  tests/api.test.js (6.721 s)
+ PASS  tests/api.test.js
   Authentication
-    √ should create session authentication (5382 ms)
+    ✓ should create session authentication (1233 ms)
   Login
-    √ should create user session (24 ms)
+    ✓ should create user session (131 ms)
   User
-    √ should list user by id (7 ms)
+    ✓ should list user by id (9 ms)
 
 Test Suites: 1 passed, 1 total
 Tests:       3 passed, 3 total
 Snapshots:   0 total
-Time:        6.776 s, estimated 17 s
+Time:        2.136 s
 Ran all test suites.
-Done in 7.37s.
+Done in 2.58s.
 ```
 
 ## Contato

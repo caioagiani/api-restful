@@ -1,9 +1,9 @@
 const { Schema, model } = require('mongoose');
-const bcryptjs = require('bcryptjs');
+const { hashSync } = require('bcryptjs');
 
 const UserSchema = new Schema(
   {
-    name: {
+    nome: {
       type: String,
       required: true
     },
@@ -19,12 +19,12 @@ const UserSchema = new Schema(
         ddd: String
       }
     ],
-    password: {
+    senha: {
       type: String,
       required: true,
       select: false
     },
-    lastLoginAt: {
+    data_ultima_atualizacao: {
       type: Date,
       default: Date.now()
     },
@@ -34,18 +34,18 @@ const UserSchema = new Schema(
     }
   },
   {
-    timestamps: true
+    timestamps: { createdAt: 'data_criacao', updatedAt: 'data_atualizacao' }
   }
 );
 
-UserSchema.pre('save', async function () {
-  this.password = await bcryptjs.hash(this.password, 1);
+UserSchema.pre('save', function () {
+  this.senha = hashSync(this.senha, 1);
 });
 
 UserSchema.pre('updateOne', async function () {
-  const pass = this.getUpdate().password;
+  const pass = this.getUpdate().senha;
 
-  if (pass) this.getUpdate().password = bcryptjs.hashSync(pass, 10);
+  if (pass) this.getUpdate().senha = hashSync(pass, 10);
 });
 
 module.exports = model('User', UserSchema);
